@@ -38,6 +38,7 @@ body {
     background-color: #512DA8;
 }
 
-.btn {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.btn-feedback {
+    background-color: #512DA8;
+    border: 0;
 }
