@@ -73,3 +73,21 @@ body {
     position: absolute;
     bottom: 0px;
 }
+
+// Modals styles
+
+.modal-header {
+    background: $background-dark;
+
+    .modal-title {
+        color: floralwhite;
+    }
+
+    .close {
+        color: floralwhite;
+    }
+}
+
+.modal-body {
+    background: $background-pale;
+}
