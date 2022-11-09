@@ -1,41 +1,34 @@
 'use strict';
 
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    gulp_sass = require('gulp-sass')(require('node-sass')),
     browserSync = require('browser-sync');
 
- 
-gulp.task('sass', function () {
-    return gulp.src('./css/*.scss')
-        .pipe(sass()).on('error', sass.logError)
-        .pipe(gulp.dest('./css/'));
-    });
-    
-    gulp.task('sass:watch', function () {
-        gulp.watch('./css/*.scss', function(done) {
-            gulp.series('sass')(done);
-        });
-    });
-    
-    gulp.task('browser-sync', function () {
-        var files = [
-            './*.html',
-            './css/*.css',
-            './img/*.{png,jpg,gif}',
-            './js/*.js'
-        ];
-    
-        browserSync.init(files, {
-        server: {
-            baseDir: "./"
-        }
-        });
-    
-    });
+function sass () {
+  return gulp.src('./css/*.scss')
+    .pipe(gulp_sass().on('error', gulp_sass.logError))
+    .pipe(gulp.dest('./css'));
+}
 
-gulp.task(
-    'default',
-    gulp.series([
-        'browser-sync', 'sass:watch'
-    ])
-);
+function sassWatch () {
+  gulp.watch('./css/*.scss', sass);
+}
+
+function browser_sync () {
+   var files = [
+      './*.html',
+      './css/*.css',
+      './img/*.{png,jpg,gif}',
+      './js/*.js'
+   ];
+
+   browserSync.init(files, {
+      server: {
+         baseDir: "./"
+      }
+   });
+
+}
+
+// Default task
+exports.default = gulp.parallel(sassWatch, browser_sync);
