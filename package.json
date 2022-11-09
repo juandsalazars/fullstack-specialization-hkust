@@ -37,7 +37,15 @@
     "grunt-sass": "^3.1.0",
     "grunt-usemin": "^3.1.1",
     "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-rimraf": "^1.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-usemin": "^0.3.30",
     "htmlmin": "^0.0.7",
     "lite-server": "^2.3.0",
     "node-sass": "^7.0.3",
@@ -53,6 +61,7 @@
     "font-awesome": "^4.7.0",
     "jit-grunt": "^0.10.0",
     "jquery": "^3.3.1",
+    "node-fetch": "^2.6.1",
     "popper.js": "^1.12.9",
     "time-grunt": "^2.0.0"
   }
