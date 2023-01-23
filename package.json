@@ -14,7 +14,8 @@
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     "imagemin": "imagemin img/* -o dist/img",
     "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -59,6 +60,7 @@
     "bootstrap": "^4.0.0",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^5.0.0",
     "jit-grunt": "^0.10.0",
     "jquery": "^3.3.1",
     "node-fetch": "^2.6.1",
